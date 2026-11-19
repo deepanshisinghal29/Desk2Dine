@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Menu Items</title>
+<style>
+	table,tr,th,td{
+		border:1px solid black;
+		border-collapse:collapse;
+		padding:8px;
+	}
+</style>
+</head>
+<body>
+	<h1>Menu Items:</h1>
+	<table>
+		<tr>
+			<th>Item</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Action</th>
+		</tr>
+		<tr th:each="item : ${list}">	
+			<td th:text="${item.itemName}"></td>
+			<td th:text="${item.price}"></td>
+			<td th:text="${item.quantityAvailable}"></td>
+			<td><a th:href="@{/menu/update(id=${item.id})}">Edit</a></td>
+		</tr>
+	</table>
+		
+	
+</body>
+</html>
